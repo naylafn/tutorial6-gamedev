@@ -19,6 +19,10 @@ run/main_scene="uid://btxj7qg63smil"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*uid://b1dyj17e3u46t"
+
 [input]
 
 up={
