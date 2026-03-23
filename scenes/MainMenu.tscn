@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cp20ih21w1lg6" path="res://assets/Fonts/continuum bold.ttf" id="1_0ykhv"]
 [ext_resource type="Texture2D" uid="uid://dwc8dd51xoi1h" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="2_2wh52"]
+[ext_resource type="Script" uid="uid://dlqwihkp7qvn2" path="res://scenes/LinkButton.gd" id="2_ow34m"]
 
 [node name="MainMenu" type="MarginContainer" unique_id=1558552140]
 anchors_preset = 15
@@ -36,6 +37,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_0ykhv")
 theme_override_font_sizes/font_size = 25
 text = "New Game"
+script = ExtResource("2_ow34m")
+scene_to_load = "Level 1"
 
 [node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=820186080]
 layout_mode = 2
@@ -50,3 +53,5 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_2wh52")
 stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
