@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bls6pqt8flug3" path="res://scenes/tile_map.tscn" id="3_ucxpt"]
 [ext_resource type="PackedScene" uid="uid://bul5fybv2rytg" path="res://scenes/Area Trigger.tscn" id="4_l54f5"]
 [ext_resource type="PackedScene" uid="uid://dbgfwow1ctu7r" path="res://scenes/Pause.tscn" id="5_c0aay"]
+[ext_resource type="PackedScene" uid="uid://jty4s5hfo4dq" path="res://scenes/LifeCounter.tscn" id="6_ukund"]
 
 [node name="Level 2" type="Node2D" unique_id=1804132769]
 
@@ -28,3 +29,7 @@ scale = Vector2(10.56, 1)
 sceneName = "Level 2"
 
 [node name="Pause" parent="." unique_id=457456954 instance=ExtResource("5_c0aay")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Pause" unique_id=1441679685]
+
+[node name="LifeCounter" parent="Pause/CanvasLayer" unique_id=1022935882 instance=ExtResource("6_ukund")]
