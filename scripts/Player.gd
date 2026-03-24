@@ -9,7 +9,10 @@ const UP = Vector2(0, -1)
 @onready var animator = self.get_node("Animator")
 @onready var sprite = self.get_node("Sprite2D")
 
-
+@onready var pause_menu = get_parent().get_node("Pause")
+func _ready():
+	pause_menu.visible = false
+	
 func get_input():
 	velocity.x = 0
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
@@ -40,3 +43,12 @@ func _process(delta: float) -> void:
 			sprite.flip_h = true
 	else:
 		animator.play("Idle")
+
+func _input(event):
+	if event.is_action_pressed("pause"):
+		toggle_pause()
+
+func toggle_pause():
+	var is_paused = get_tree().paused
+	get_tree().paused = !is_paused
+	pause_menu.visible = !is_paused

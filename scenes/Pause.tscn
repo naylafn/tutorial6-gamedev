@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dbgfwow1ctu7r"]
+
+[ext_resource type="Texture2D" uid="uid://11mcqqmta1br" path="res://assets/kenney_platformerpack/PNG/Items/flagRed1.png" id="1_8v81o"]
+[ext_resource type="FontFile" uid="uid://cp20ih21w1lg6" path="res://assets/Fonts/continuum bold.ttf" id="2_hdb6x"]
+[ext_resource type="Script" uid="uid://dlqwihkp7qvn2" path="res://scenes/LinkButton.gd" id="3_uc2tp"]
+
+[node name="Pause" type="CanvasLayer" unique_id=457456954]
+process_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=765684117]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=2024887487]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer" unique_id=121160858]
+layout_mode = 2
+texture = ExtResource("1_8v81o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=351674824]
+layout_mode = 2
+theme_override_constants/separation = 125
+alignment = 1
+
+[node name="Exit" type="LinkButton" parent="VBoxContainer/HBoxContainer" unique_id=1744194259]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hdb6x")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+underline = 1
+script = ExtResource("3_uc2tp")
+
+[node name="Continue" type="LinkButton" parent="VBoxContainer/HBoxContainer" unique_id=194585390]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hdb6x")
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+underline = 1
+script = ExtResource("3_uc2tp")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Exit" to="VBoxContainer/HBoxContainer/Exit" method="_on_Exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Continue" to="VBoxContainer/HBoxContainer/Continue" method="_on_Continue_pressed"]

@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://damkuqx1xbloy"]
 
-[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dw4ygdfr0erll" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bls6pqt8flug3" path="res://scenes/tile_map.tscn" id="2_ixamt"]
 [ext_resource type="Texture2D" uid="uid://tpq0ge2lruix" path="res://assets/Familiar Looking Rocket.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://bul5fybv2rytg" path="res://scenes/Area Trigger.tscn" id="4_enfm1"]
 [ext_resource type="PackedScene" uid="uid://jty4s5hfo4dq" path="res://scenes/LifeCounter.tscn" id="5_8iqp6"]
+[ext_resource type="PackedScene" uid="uid://dbgfwow1ctu7r" path="res://scenes/Pause.tscn" id="6_oecem"]
 
 [node name="Level 1" type="Node2D" unique_id=1717585696]
 
@@ -30,3 +31,5 @@ sceneName = "Level 2"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1247007660]
 
 [node name="LifeCounter" parent="CanvasLayer" unique_id=1022935882 instance=ExtResource("5_8iqp6")]
+
+[node name="Pause" parent="." unique_id=457456954 instance=ExtResource("6_oecem")]

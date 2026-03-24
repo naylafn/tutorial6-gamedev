@@ -3,6 +3,7 @@ extends LinkButton
 @export var scene_to_load: String
 
 func _on_New_Game_pressed():
+	print("New Game")
 	get_tree().change_scene_to_file(str("res://scenes/" + scene_to_load + ".tscn"))
 
 func _on_Try_Again_pressed():
@@ -19,3 +20,11 @@ func _on_Level_1_pressed():
 
 func _on_Level_2_pressed():
 	get_tree().change_scene_to_file(str("res://scenes/" + scene_to_load + ".tscn"))
+
+func _on_Exit_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file(str("res://scenes/" + "MainMenu" + ".tscn"))
+
+func _on_Continue_pressed():
+	get_tree().paused = false
+	get_tree().current_scene.get_node("Pause").visible = false
