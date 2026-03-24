@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://btxj7qg63smil"]
+
+[ext_resource type="FontFile" uid="uid://cp20ih21w1lg6" path="res://assets/Fonts/continuum bold.ttf" id="1_g44ew"]
+[ext_resource type="Script" uid="uid://dlqwihkp7qvn2" path="res://scenes/LinkButton.gd" id="2_e0kik"]
+[ext_resource type="Texture2D" uid="uid://dwc8dd51xoi1h" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="3_a7mf4"]
+
+[node name="Stage" type="MarginContainer" unique_id=1558552140]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1612390888]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=256573067]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=983333772]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g44ew")
+theme_override_font_sizes/font_size = 50
+text = "Alienesia"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=997518679]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=331322479]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g44ew")
+theme_override_font_sizes/font_size = 25
+text = "Level 1"
+underline = 1
+script = ExtResource("2_e0kik")
+scene_to_load = "Level 1"
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=820186080]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g44ew")
+theme_override_font_sizes/font_size = 25
+text = "Level 2"
+underline = 1
+script = ExtResource("2_e0kik")
+scene_to_load = "Level 2"
+
+[node name="LinkButton3" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=749754300]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g44ew")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+underline = 1
+script = ExtResource("2_e0kik")
+scene_to_load = "MainMenu"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1591595351]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=906310338]
+layout_mode = 2
+texture = ExtResource("3_a7mf4")
+stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_Level_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_Level_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton3" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_Main_Menu_pressed"]
