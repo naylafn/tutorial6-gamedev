@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di26q00bqfxq4"]
 
 [ext_resource type="FontFile" uid="uid://cp20ih21w1lg6" path="res://assets/Fonts/continuum bold.ttf" id="1_vlb8f"]
+[ext_resource type="Script" uid="uid://dlqwihkp7qvn2" path="res://scenes/LinkButton.gd" id="2_8vl1a"]
 
 [node name="ColorRect" type="ColorRect" unique_id=501647978]
 anchors_preset = 15
@@ -10,14 +11,49 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.51020426, 0.13194108, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=368719822]
-layout_mode = 0
-offset_left = 143.0
-offset_top = 209.0
-offset_right = 1003.0
-offset_bottom = 414.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=197542866]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=368719822]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vlb8f")
 theme_override_font_sizes/font_size = 150
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1673018733]
+layout_mode = 2
+alignment = 1
+
+[node name="Try Again" type="LinkButton" parent="VBoxContainer/HBoxContainer" unique_id=2036279740]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vlb8f")
+theme_override_font_sizes/font_size = 30
+text = "Try Again"
+underline = 1
+script = ExtResource("2_8vl1a")
+scene_to_load = "Level 1"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=986117640]
+layout_mode = 2
+alignment = 1
+
+[node name="Main Menu" type="LinkButton" parent="VBoxContainer/HBoxContainer2" unique_id=711067638]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vlb8f")
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+underline = 1
+script = ExtResource("2_8vl1a")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Try Again" to="VBoxContainer/HBoxContainer/Try Again" method="_on_Try_Again_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Main Menu" to="VBoxContainer/HBoxContainer/Try Again" method="_on_Main_Menu_pressed"]
