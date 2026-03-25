@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bul5fybv2rytg" path="res://scenes/Area Trigger.tscn" id="4_enfm1"]
 [ext_resource type="PackedScene" uid="uid://jty4s5hfo4dq" path="res://scenes/LifeCounter.tscn" id="5_8iqp6"]
 [ext_resource type="PackedScene" uid="uid://dbgfwow1ctu7r" path="res://scenes/Pause.tscn" id="6_oecem"]
+[ext_resource type="PackedScene" uid="uid://bovp33e21biy2" path="res://scenes/Level Transition.tscn" id="7_4ae40"]
 
 [node name="Level 1" type="Node2D" unique_id=1717585696]
 
@@ -33,3 +34,5 @@ sceneName = "Level 2"
 [node name="LifeCounter" parent="CanvasLayer" unique_id=1022935882 instance=ExtResource("5_8iqp6")]
 
 [node name="Pause" parent="." unique_id=457456954 instance=ExtResource("6_oecem")]
+
+[node name="Level Transition" parent="." unique_id=306203602 instance=ExtResource("7_4ae40")]

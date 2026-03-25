@@ -12,6 +12,7 @@ const UP = Vector2(0, -1)
 @onready var pause_menu = get_parent().get_node("Pause")
 func _ready():
 	pause_menu.visible = false
+	get_tree().paused = false
 	
 func get_input():
 	velocity.x = 0
